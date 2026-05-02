@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineFlex | Book Movie Tickets</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <span class="logo-icon">🎬</span>
+                <span class="logo-text">Cine<span class="highlight">Flex</span></span>
+            </div>
+            <div class="tagline">Book tickets in seconds • Premium experience</div>
+        </div>
+
+        <!-- Movie Selection -->
+        <div class="movies-section" id="moviesSection">
+            <h2 class="section-title">🎭 Now Showing</h2>
+            <div class="movies-grid" id="moviesGrid"></div>
+        </div>
+
+        <!-- Booking Section (Hidden initially) -->
+        <div class="booking-section" id="bookingSection" style="display: none;">
+            <div class="booking-card">
+                <div class="booking-header">
+                    <h2>🎟️ Complete Your Booking</h2>
+                    <button class="close-btn" id="closeBookingBtn">✕</button>
+                </div>
+                
+                <div class="movie-summary" id="movieSummary"></div>
+                
+                <!-- Seat Selection -->
+                <div class="seat-section">
+                    <h3>Select Your Seats</h3>
+                    <div class="seat-legend">
+                        <div class="legend-item"><div class="seat-sample available"></div><span>Available</span></div>
+                        <div class="legend-item"><div class="seat-sample selected"></div><span>Selected</span></div>
+                        <div class="legend-item"><div class="seat-sample booked"></div><span>Booked</span></div>
+                    </div>
+                    <div class="screen">SCREEN</div>
+                    <div class="seats-grid" id="seatsGrid"></div>
+                    <div class="selected-info" id="selectedInfo">No seats selected</div>
+                </div>
+                
+                <!-- Customer Details -->
+                <div class="customer-details">
+                    <h3>Contact Information</h3>
+                    <div class="form-group">
+                        <input type="text" id="fullName" placeholder="Full Name" required>
+                        <input type="email" id="email" placeholder="Email Address" required>
+                        <input type="tel" id="phone" placeholder="Phone Number" required>
+                    </div>
+                </div>
+                
+                <!-- Payment Summary -->
+                <div class="payment-summary">
+                    <div class="summary-row">
+                        <span>Ticket Price:</span>
+                        <span>₹<span id="ticketPrice">0</span> <span class="per-ticket">/ ticket</span></span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Number of Tickets:</span>
+                        <span id="ticketCount">0</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total Amount:</span>
+                        <span>₹<span id="totalAmount">0</span></span>
+                    </div>
+                </div>
+                
+                <div class="booking-actions">
+                    <button class="btn-secondary" id="changeMovieBtn">← Change Movie</button>
+                    <button class="btn-primary" id="confirmBookingBtn">Confirm Booking ✓</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="success-icon">✓</div>
+                <h2>Booking Confirmed!</h2>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+            <button class="btn-primary" id="modalCloseBtn">Book Another Movie</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
